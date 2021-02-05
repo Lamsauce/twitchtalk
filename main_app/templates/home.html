@@ -3,4 +3,35 @@
 
 <h2>Threads</h2>
 
+<!-- {% for thread in threads %}
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ thread.title }}</span>
+            <p>Description: {{ thread.description }}</p>
+        </div>
+    </div>
+{% endfor %} -->
+
+
+<!-- THREADS -->
+{% for thread in threads %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ thread.title }}</span>
+      <p>Description: {{ thread.description }}</p>
+      <p>Created on: {{ post.created_at }}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+<!-- COMMENTS -->
+{% for comment in thread.comment %}
+  <div class="card">
+      <div class="card-content">
+        <p>Description: </p>
+        <p>Replied on: </p>
+      </div>
+  </div>
+{% endfor %}
+
 {% endblock %}
