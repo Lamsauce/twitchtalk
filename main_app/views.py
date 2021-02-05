@@ -6,10 +6,16 @@ def home(request):
     return render(request, 'home.html')
 
 def register(request):
-    return HttpResponse('Register')
+    return render(request, 'register.html')
 
 def login(request):
-    return HttpResponse('Login')
+    return render(request, 'login.html')
 
 def games(request):
-    return HttpResponse('Games List')
+    return render(request, 'games.html')
+
+def thread(request):
+    return render(request, 'thread.html')
+
+def profile(request):
+    return render(request, 'profile.html')

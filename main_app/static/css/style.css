@@ -1,0 +1,16 @@
+nav {
+    background-color: #6441A4;
+}
+
+* {
+    font-family: "helvetica";
+    font-weight: 500 !important;
+}
+
+a {
+    font-size: 18px !important;
+}
+
+h2 {
+    font-size: 25px !important;
+}

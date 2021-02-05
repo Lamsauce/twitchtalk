@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwitchTalk</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Link Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+    <!-- Base EVERY page -->
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="right">
+                    <li><a href="{% url 'register' %}"}>Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="align-middle">TwitchTalk</h1>
+
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="left">
+                <li><a href="{% url 'home' %}">Forums</a></li>
+                <li><a href="{% url 'games' %}">Games</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- END base -->
+
+    {% block content %}
+    {% endblock %}
+    
+</body>
+</html>
