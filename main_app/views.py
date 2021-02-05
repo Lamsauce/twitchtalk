@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Thread, Comment
 
 # Home view
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', context = {"threads":Thread.objects.all})
 
 def register(request):
     return render(request, 'register.html')
