@@ -1,5 +1,7 @@
 nav {
     background-color: #6441A4;
+    border-radius: 10px 10px 10px 10px;
+    height: 50px;
 }
 
 * {
@@ -9,13 +11,22 @@ nav {
 
 a {
     font-size: 18px !important;
+    height: 50px;
+    line-height: 50px;
 }
 
 h2 {
     font-size: 25px !important;
 }
 
-footer {
-    padding-top: 0;
-    text-align: right;
+#drop {
+    color: black;
+}
+
+.nav-area {
+    padding: 0px 10px 10px 10px;
+}
+
+#li-login {
+    padding-right: 5px;
 }

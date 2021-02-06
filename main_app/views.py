@@ -11,6 +11,8 @@ def home(request):
     return render(request, 'home.html', context = {"threads":Thread.objects.all})
 
 def register(request):
+
+
     error_message = ''
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
