@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from .models import Thread, Comment
+from django.http import HttpResponseRedirect
 
-from django.contrib.auth import login
+from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 
@@ -16,8 +16,8 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            return redirect('/')
+            auth_login(request, user)
+            return redirect('home')
         else:
             error_message = 'Invalid username or password. Please try again.'
 
