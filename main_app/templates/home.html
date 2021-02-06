@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Threads</h2>
+<!-- Thread HEADER -->
+<div class="container">
+<h2 id="thread-title">Threads</h2>
 
 <!-- THREADS LIST -->
 {% for thread in threads %}
@@ -13,7 +15,6 @@
     </div>
   </div>
   {% endfor %}
-
-
+  </div>
 
 {% endblock %}

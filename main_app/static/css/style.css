@@ -30,3 +30,14 @@ h2 {
 #li-login {
     padding-right: 5px;
 }
+
+h2 {
+    margin: 0px;
+}
+
+#thread-title {
+    background: #8541a4;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+}
