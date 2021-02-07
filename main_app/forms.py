@@ -17,12 +17,12 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-class RegisterForm(ModelForm):
+class RegisterForm(UserCreationForm):
     username = forms.CharField(max_length=100)
-    password = forms.CharField(widget=forms.PasswordInput)
     email = forms.EmailField(widget=forms.EmailInput)
-    twitch_url = forms.URLField(max_length=100, label='Twitch URL')
+    twitch_url = forms.URLField(max_length=100, label='Twitch URL', required=False)
     
     class Meta:
         model = User
-        fields = ["username", "password", "email", "twitch_url"]
+        fields = ["username", "email", "twitch_url"]
+
