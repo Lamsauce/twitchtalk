@@ -13,6 +13,9 @@ class Thread(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+    class Meta:
+        ordering = ['-created_at']
+
 class Comment(models.Model):
     description = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
