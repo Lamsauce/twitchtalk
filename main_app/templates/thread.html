@@ -10,6 +10,11 @@
     <span class="card-title">{{ thread.title }}</span>
     <p>{{ thread.description }}</p>
     <p>{{ thread.created_at }} PST</p>
+
+      <form action="{% url 'thread_edit' %}" method="POST">
+        {% csrf_token %} {{edit_form.as_p}}
+        <input class="btn btn-primary" type="submit" value="Edit">
+      </form>
   </div>
 </div>
 

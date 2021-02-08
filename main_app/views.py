@@ -71,7 +71,7 @@ def addthread(request):
     thread_form = ThreadForm(request.POST)
     return render(request, 'addthread.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
 
-""" def thread_edit(request, thread_id):
+def thread_edit(request, thread_id):
     thread = Thread.objects.get(id=thread_id)
     if request.method == 'POST':
         edit_form = Thread_Form(request.POST, instance=post)
@@ -81,4 +81,4 @@ def addthread(request):
 
     edit_form = Thread_Form(instance=post)
     context = {'edit_form': edit_form, 'thread': thread}
-    return render(request, 'thread.html', context) """
+    return render(request, 'thread.html', context) 
