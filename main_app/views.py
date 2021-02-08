@@ -48,8 +48,10 @@ def login(request):
 def games(request):
     return render(request, 'games.html')
 
-def thread(request):
-    return render(request, 'thread.html')
+def thread(request, thread_id):
+    thread = Thread.objects.get(id=thread_id)
+    context ={'thread': thread}
+    return render(request, 'thread.html', context)
 
 def profile(request):
     return render(request, 'profile.html')
