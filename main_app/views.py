@@ -12,9 +12,16 @@ from .forms import RegisterForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 
+# Add Models
+from .models import Thread
+from .forms import ThreadForm
+
 # Home view
 def home(request):
-    return render(request, 'home.html', context = {"threads":Thread.objects.all})
+    if request.method == 'POST':
+        thread_form = ThreadForm(request.POST)
+
+    return render(request, 'home.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
 
 def register(request):
     error_message = ''
