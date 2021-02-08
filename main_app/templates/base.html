@@ -16,34 +16,45 @@
 </head>
 <body>
 
-    <!-- Base EVERY page -->
-    <header class="navbar-fixed">
+<div class="nav-area">
+    <!-- TOP NAVBAR / REGISTRATION | LOGIN -->
+    <header class="navbar">
         <nav>
             <div class="nav-wrapper">
                 <ul class="right">
-                    <li><a href="{% url 'register' %}"}>Register</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+
+                    {% else %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li id="li-login"><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
     </header>
 
+    <!-- THE LOGO between navbars -->
     <h1 class="align-middle">TwitchTalk</h1>
 
-    <nav>
-        <div class="nav-wrapper">
-            <ul class="left">
-                <li><a href="{% url 'home' %}">Forums</a></li>
-                <li><a href="{% url 'games' %}">Games</a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="left">
+                    <li><a href="{% url 'home' %}">Forums</a></li>
+                    <li><a href="{% url 'games' %}">Games</a></li>
+                </ul>
+            </div>
+        </nav> 
+</div>
 
     <!-- END base --> 
     <main>
     {% block content %}
     {% endblock %}
     </main>
+
+    <!-- FOOTER -->
 <!-- 
     <footer class="footer">
         <div>2021 TwitchTalk &nbsp</div>
