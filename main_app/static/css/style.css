@@ -38,3 +38,19 @@ h2 {
     padding: 10px 10px 10px 10px;
     color: white;
 }
+
+#addButton {
+    float: right;
+    text-transform: none !important;
+}
+
+#addButtonBlock {
+    float: right;
+    text-transform: none !important;
+}
+
+#addButtonBlock:hover:after {
+    content: "(Must be logged in)";
+    font-style: italic;
+    font-size: 10px;
+}

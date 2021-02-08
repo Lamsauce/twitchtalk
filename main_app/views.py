@@ -18,10 +18,7 @@ from .forms import ThreadForm
 
 # Home view
 def home(request):
-    if request.method == 'POST':
-        thread_form = ThreadForm(request.POST)
-
-    return render(request, 'home.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
+    return render(request, 'home.html', context = {"threads":Thread.objects.all})
 
 def register(request):
     error_message = ''
@@ -56,3 +53,15 @@ def thread(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+def addthread(request):
+    if request.method == 'POST':
+        thread_form = ThreadForm(request.POST)
+        if thread_form.is_valid():
+            new_thread = thread_form.save(commit=False)
+            new_thread.user = request.user
+            new_thread.save()
+            return render(request, 'home.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
+
+    thread_form = ThreadForm(request.POST)
+    return render(request, 'addthread.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})

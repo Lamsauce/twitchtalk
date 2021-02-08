@@ -3,13 +3,19 @@
 
 <!-- Thread HEADER -->
 <div class="container">
-<h2 id="thread-title">Threads</h2>
+  <h2 id="thread-title">Threads
 
-<form method="POST">
-  {% csrf_token %}
-  {{thread_form.as_p}}
-<input type="submit" class="btn" value="Add Thread">
-</form>
+    <!-- Add Post AUTH Filter -->
+    {% if user.is_authenticated %}
+<!--     <a id="addButton" href="{% url 'addthread' %}">Add Post</a> -->
+    <a class="btn" id="addButton" href="{% url 'addthread' %}">Add Post</a>
+
+    {% else %}
+    <a class="btn" id="addButtonBlock">Add Post</a>
+
+    {% endif %}
+  </h2>
+
 
 <!-- THREADS LIST -->
 {% for thread in threads %}

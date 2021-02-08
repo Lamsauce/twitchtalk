@@ -6,5 +6,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('games/', views.games, name='games'),
     path('accounts/profile/', views.profile, name='profile'),
-    path('thread/', views.thread, name='thread')
+    path('thread/', views.thread, name='thread'),
+    path('addthread/', views.addthread, name='addthread')
 ]
