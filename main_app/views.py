@@ -34,7 +34,6 @@ def register(request):
             else:
                 error_message = 'Invalid username or password. Please try again.'
 
-
     form = RegisterForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/register.html', context)

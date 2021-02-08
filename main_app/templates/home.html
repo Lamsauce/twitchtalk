@@ -11,7 +11,7 @@
     <div class="card-content">
       <span class="card-title">{{ thread.title }}</span>
       <p>{{ thread.description }}</p>
-      <p>Created: {{ thread.created_at }} PST</p>
+      <p>Created by: {{thread.user}} {{ thread.created_at }} PST</p>
     </div>
   </div>
   {% endfor %}
