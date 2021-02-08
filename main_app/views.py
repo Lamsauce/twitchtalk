@@ -20,12 +20,20 @@ def register(request):
     error_message = ''
     if request.method == 'POST':
         form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            auth_login(request, user)
-            return redirect('home')
-        else:
-            error_message = 'Invalid username or password. Please try again.'
+        try:
+            user_exists = User.objects.get(username=request.POST['username'])
+            error_message = 'Username already taken.'
+            return render(request, 'registration/register.html', {'form': form})
+
+        except User.DoesNotExist:
+
+            if form.is_valid():
+                user = form.save()
+                auth_login(request, user)
+                return redirect('home')
+            else:
+                error_message = 'Invalid username or password. Please try again.'
+
 
     form = RegisterForm()
     context = {'form': form, 'error_message': error_message}
