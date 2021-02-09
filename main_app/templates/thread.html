@@ -10,8 +10,18 @@
     <span class="card-title">{{ thread.title }}</span>
     <p>{{ thread.description }}</p>
     <p>{{ thread.created_at }} PST</p>
-
   </div>
+</div>
+
+
+<!-- ADD COMMENT -->
+<div class="card-body">
+  <h3>Leave a comment</h3>
+  <form method="POST">
+    {{ comment_form.as_p }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+  </form>
 </div>
 
 <!-- COMMENTS -->

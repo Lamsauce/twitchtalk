@@ -1,19 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import Thread, Comment, Game
 from django.http import HttpResponseRedirect
-
 # Register Form
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from .forms import RegisterForm
-
 # Login
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
-
-# Add Thread Form
-from .forms import ThreadForm
+# Create Forms
+from .forms import ThreadForm, CommentForm
 # Edit Form
 from django.views.generic.edit import UpdateView
 
@@ -52,7 +49,21 @@ def games(request):
 def thread(request, thread_id):
     thread = Thread.objects.get(id=thread_id)
     comments = thread.comments.filter() 
-    context ={'thread': thread, 'comments': comments}
+    new_comment = None
+    
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.thread = thread
+            new_comment.user = request.user
+            new_comment.save()
+            return render(request, 'thread.html', context = {'thread': thread, 'comments': comments, 'new_comment': new_comment, 'comment_form': comment_form})
+    else:
+        comment_form = CommentForm()
+
+    comment_form = CommentForm(request.POST)
+    context ={'thread': thread, 'comments': comments, 'comment_form': comment_form}
     return render(request, 'thread.html', context)
 
 def profile(request):
