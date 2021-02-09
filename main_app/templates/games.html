@@ -3,5 +3,15 @@
 
 <div class="container">
     <h2>Games</h2>
+
+    {% for game in games %}
+  <div class="card">
+    <div class="card-content">
+      <p>{{ game.title }}</p>
+      <p>{{ game.description }}</p>
+    </div>
+  </div>
+
+  {% endfor %}
 </div>
 {% endblock %}

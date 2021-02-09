@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Thread, Comment
+from .models import Thread, Comment, Game
 from django.http import HttpResponseRedirect
 
 # Register Form
@@ -12,10 +12,8 @@ from .forms import RegisterForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 
-# Add Models
-from .models import Thread
+# Add Thread Form
 from .forms import ThreadForm
-
 # Edit Form
 from django.views.generic.edit import UpdateView
 
@@ -49,7 +47,7 @@ def login(request):
     return render(request, 'login.html')
 
 def games(request):
-    return render(request, 'games.html')
+    return render(request, 'games.html', context = {"games":Game.objects.all})
 
 def thread(request, thread_id):
     thread = Thread.objects.get(id=thread_id)

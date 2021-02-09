@@ -20,3 +20,11 @@ class Comment(models.Model):
     description = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
+
+class Game(models.Model):
+    title = models.CharField(max_length = 50)
+    description = models.CharField(max_length = 10000)
+    twitch_url = models.URLField(max_length = 200)
+
+    def __str__(self):
+        return f"{self.title}"
