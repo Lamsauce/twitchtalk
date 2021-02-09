@@ -11,23 +11,19 @@
     <p>{{ thread.description }}</p>
     <p>{{ thread.created_at }} PST</p>
 
-      <form action="{% url 'thread_edit' %}" method="POST">
-        {% csrf_token %} {{edit_form.as_p}}
-        <input class="btn btn-primary" type="submit" value="Edit">
-      </form>
   </div>
 </div>
 
-
 <!-- COMMENTS -->
-<!-- {% for comment in thread.comment %}
+{% for comment in comments %}
   <div class="card">
       <div class="card-content">
-        <p>Description: </p>
-        <p>Replied on: </p>
+       <p>{{ comment.user }} replied:</p>
+      <p>{{ comment.body }}</p>
+      <p>{{ comment.created_at }} PST</p>
       </div>
   </div>
-{% endfor %} -->
+{% endfor %}
 </div>
 
 {% endblock %}
