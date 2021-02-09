@@ -17,9 +17,16 @@ class Thread(models.Model):
         ordering = ['-created_at']
 
 class Comment(models.Model):
-    description = models.TextField(max_length=1000)
+    body = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"USER: {self.user} COMMENTED: '{self.body}'"
+
+    class Meta:
+        ordering = ['-created_at']
 
 class Game(models.Model):
     title = models.CharField(max_length = 50)
