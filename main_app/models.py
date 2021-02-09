@@ -32,6 +32,7 @@ class Game(models.Model):
     title = models.CharField(max_length = 50)
     description = models.CharField(max_length = 10000)
     twitch_url = models.URLField(max_length = 200)
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return f"{self.title}"
