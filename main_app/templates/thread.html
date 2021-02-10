@@ -17,9 +17,9 @@
 <!-- ADD COMMENT -->
 <div class="card-body">
   <h3>Leave a comment</h3>
-  <form method="POST">
-    {{ comment_form.as_p }}
+  <form method="POST"> <!-- needs action -->
     {% csrf_token %}
+    {{ comment_form.as_p }}
     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
   </form>
 </div>

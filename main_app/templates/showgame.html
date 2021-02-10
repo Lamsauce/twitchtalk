@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+<h2>{{ game.title }}</h2>
+
+<div class="card">
+  <div class="card-content" id="game-content">
+    <img src="{{ game.image.url }}" alt="Logo">
+    <p>{{ game.title }}</p>
+    <hr>
+    <span>{{ game.description }}</span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

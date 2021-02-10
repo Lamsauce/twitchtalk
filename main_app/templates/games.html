@@ -4,15 +4,16 @@
 <div class="container">
     <h2>Games</h2>
 
-    {% for game in games %}
-  <div class="card">
-    <div class="card-content">
-    <img src="{{ game.image.url }}" alt="Among Us Logo">
-      <p>{{ game.title }}</p>
-      <p>{{ game.description }}</p>
+    <div class="card">
+        <div class="card-content" id="game-logo-layout">
+    
+    {% for game in games|dictsort:"title.lower" %}
+            <a id="game-links" href="{% url 'showgame' game.id %}">
+                <img id="game-logo" src="{{ game.image.url }}" alt="Logo">
+            </a>
+            
+    {% endfor %}
+        </div>
     </div>
-  </div>
-
-  {% endfor %}
 </div>
 {% endblock %}

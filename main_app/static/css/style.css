@@ -15,10 +15,6 @@ a {
     line-height: 50px;
 }
 
-h2 {
-    font-size: 25px !important;
-}
-
 #drop {
     color: black;
 }
@@ -32,8 +28,9 @@ h2 {
 }
 
 h2 {
+    font-size: 25px !important;
     margin: 0px;
-    background: #8541a4;
+    background: #322D3D;
     border-radius: 10px 10px 0px 0px;
     padding: 10px 10px 10px 10px;
     color: white;
@@ -53,4 +50,19 @@ h2 {
     content: "(Must be logged in)";
     font-style: italic;
     font-size: 10px;
+}
+
+img {
+    width: 144px;
+    height: 192px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#game-links {
+    line-height: 0px;
+}
+
+#game-content {
+    text-align: center;
 }
