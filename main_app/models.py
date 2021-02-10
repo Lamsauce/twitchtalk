@@ -1,5 +1,4 @@
 from django.db import models #imports models
-from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User #imports user
 

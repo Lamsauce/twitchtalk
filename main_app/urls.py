@@ -8,7 +8,6 @@ urlpatterns = [
     path('accounts/profile/', views.profile, name='profile'),
     path('addthread/', views.addthread, name='addthread'),
     path('<int:thread_id>/', views.thread, name='thread'),
-    path('<int:thread_id/edit/', views.thread_edit, name='thread_edit'),
     path('games/<int:game_id>/', views.showgame, name='showgame')
 ]
 
