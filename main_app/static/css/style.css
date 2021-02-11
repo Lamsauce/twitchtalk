@@ -1,14 +1,23 @@
+* {
+    font-family: "Helvetica";
+    font-weight: 600 !important;
+}
+
 nav {
     background-color: #6441A4;
     border-radius: 10px 10px 10px 10px;
     height: 50px;
 }
 
-* {
-    font-family: "Helvetica";
-    font-weight: 600 !important;
+.nav-link {
+    color: white;
 }
 
+.title-logo {
+    padding-top: 10px;
+}
+
+/*
 a {
     font-size: 18px !important;
     height: 50px;
@@ -65,4 +74,4 @@ img {
 
 #game-logo-layout{
     text-align: center;
-}
+} */

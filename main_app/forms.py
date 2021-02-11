@@ -17,7 +17,7 @@ class RegisterForm(UserCreationForm):
 # Add Thread Model
 class ThreadForm(forms.ModelForm):
     game = forms.ModelChoiceField(
-        queryset = Game.objects.all()
+        queryset = Game.objects.order_by('title')
     )
     class Meta:
         model = Thread
