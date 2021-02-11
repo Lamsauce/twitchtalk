@@ -94,6 +94,15 @@ def editthread(request, thread_id):
     thread_form = ThreadForm(instance=thread)
     return render(request, 'editthread.html', context = {'thread_form': thread_form})
 
+def deletethread(request, thread_id):
+    thread = Thread.objects.get(id=thread_id)
+    context = {}
+    if request.method == 'POST':
+        thread.delete()
+        return HttpResponseRedirect("/")
+
+    return render(request, 'deletethread.html', context)
+
 def showgame(request, game_id):
     game = Game.objects.get(id=game_id)
     context ={'game': game}

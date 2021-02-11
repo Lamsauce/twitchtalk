@@ -11,6 +11,7 @@
     <p>{{ thread.description }}</p>
     <p>{{ thread.created_at }} PST</p>
     <a href="{% url 'editthread' thread.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'deletethread' thread.id %}" class="btn btn-primary">Delete</a>
   </div>
 </div>
 
