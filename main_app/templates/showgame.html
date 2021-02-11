@@ -12,6 +12,21 @@
     <span>{{ game.description }}</span>
     </div>
   </div>
+
+  {% for thread in threads %}
+  <div class="card">
+    <div class="card-content">
+      <p>Created by: {{thread.user}}</p>
+      <span class="card-title">{{ thread.title }}</span>
+      <p>{{ thread.description }}</p>
+      <p>{{ thread.created_at }} PST</p>
+      <p>{{ thread.game }}</p>
+      <a href="{% url 'thread' thread.id %}" class="btn btn-primary">See Post</a>
+    </div>
+  </div>
+  {% endfor %}
 </div>
+
+
 
 {% endblock %}

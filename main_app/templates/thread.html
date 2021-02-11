@@ -10,6 +10,7 @@
     <span class="card-title">{{ thread.title }}</span>
     <p>{{ thread.description }}</p>
     <p>{{ thread.created_at }} PST</p>
+    <p>{{ thread.game }}</p>
     <a href="{% url 'editthread' thread.id %}" class="btn btn-primary">Edit</a>
     <a href="{% url 'deletethread' thread.id %}" class="btn btn-primary">Delete</a>
   </div>
