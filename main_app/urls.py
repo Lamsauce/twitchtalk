@@ -6,8 +6,9 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('games/', views.games, name='games'),
     path('accounts/profile/', views.profile, name='profile'),
-    path('addthread/', views.addthread, name='addthread'),
     path('<int:thread_id>/', views.thread, name='thread'),
+    path('addthread/', views.addthread, name='addthread'),
+    path('<int:thread_id>/edit', views.editthread, name='editthread'),
     path('games/<int:game_id>/', views.showgame, name='showgame')
 ]
 

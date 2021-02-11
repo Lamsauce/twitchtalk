@@ -81,6 +81,19 @@ def addthread(request):
     thread_form = ThreadForm(request.POST)
     return render(request, 'addthread.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
 
+def editthread(request, thread_id):
+    thread = Thread.objects.get(id=thread_id)
+    if request.method == 'POST':
+        thread_form = ThreadForm(request.POST, instance=thread)
+        if thread_form.is_valid():
+            new_thread = thread_form.save(commit=False)
+            new_thread.user = request.user
+            new_thread.save()
+            return redirect('/', thread)
+
+    thread_form = ThreadForm(instance=thread)
+    return render(request, 'editthread.html', context = {'thread_form': thread_form})
+
 def showgame(request, game_id):
     game = Game.objects.get(id=game_id)
     context ={'game': game}
