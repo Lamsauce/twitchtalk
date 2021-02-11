@@ -70,6 +70,7 @@ def profile(request):
     return render(request, 'profile.html')
 
 def addthread(request):
+
     if request.method == 'POST':
         thread_form = ThreadForm(request.POST)
         if thread_form.is_valid():
@@ -79,7 +80,7 @@ def addthread(request):
             return render(request, 'home.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
 
     thread_form = ThreadForm(request.POST)
-    return render(request, 'addthread.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form})
+    return render(request, 'addthread.html', context = {"threads":Thread.objects.all, 'thread_form': thread_form, 'games': Game.objects.all})
 
 def editthread(request, thread_id):
     thread = Thread.objects.get(id=thread_id)

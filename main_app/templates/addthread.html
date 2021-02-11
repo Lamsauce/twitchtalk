@@ -7,8 +7,27 @@
     <form method="POST">
         {% csrf_token %}
         {{thread_form.as_p}}
-    <input type="submit" class="btn" value="Add Thread">
+
+                {% for game in games %}
+                
+                <option value="{{ game.title }}">{{ game.title }}</option>
+                
+                {% endfor %}
+
+    <input type="submit" class="btn btn-primary" value="Add Thread">
     </form>
+
+    
 </div>
+
+<script>
+
+    $(document).ready(function() {
+    $('select').formSelect();
+    // Old way
+    // $('select').material_select();
+});
+    
+  </script>
 
 {% endblock %}

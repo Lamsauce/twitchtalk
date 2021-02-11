@@ -16,11 +16,14 @@ class RegisterForm(UserCreationForm):
 
 # Add Thread Model
 class ThreadForm(forms.ModelForm):
-
+    game = forms.ModelChoiceField(
+        queryset = Game.objects.all()
+    )
     class Meta:
         model = Thread
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'game']
 
+# Create Comment Model
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
