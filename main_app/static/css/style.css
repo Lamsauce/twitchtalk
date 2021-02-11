@@ -1,3 +1,5 @@
+/* Universal */
+
 * {
     font-family: "Helvetica";
     font-weight: 600 !important;
@@ -5,21 +7,57 @@
 
 nav {
     background-color: #6441A4;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 5px 5px 5px 5px;
     height: 50px;
 }
 
 .nav-link {
     color: white;
+    font-size: 18px;
 }
 
 .title-logo {
     padding-top: 10px;
 }
 
+.page-content-header {
+    margin-top: 10px;
+    padding: 5px 5px 5px 10px;
+    background-color: #6441A4;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+}
+
+/* Homepage */
+
+#addButton {
+    float: right;
+}
+
+/* Games on games index and show page */
+
+img {
+    width: 144px;
+    height: 192px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#game-links {
+    line-height: 0px;
+}
+
+#game-content {
+    text-align: center;
+}
+
+#game-logo-layout{
+    text-align: center;
+} 
+
 /*
 a {
-    font-size: 18px !important;
+    
     height: 50px;
     line-height: 50px;
 }
@@ -57,21 +95,4 @@ h2 {
     font-size: 10px;
 }
 
-img {
-    width: 144px;
-    height: 192px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-}
-
-#game-links {
-    line-height: 0px;
-}
-
-#game-content {
-    text-align: center;
-}
-
-#game-logo-layout{
-    text-align: center;
-} */
+*/

@@ -3,11 +3,10 @@
 
 <!-- Thread HEADER -->
 <div class="container">
-  <h2 id="thread-title">Threads
+  <h2 class="page-content-header">Threads
 
     <!-- Add Post AUTH Filter -->
     {% if user.is_authenticated %}
-<!--     <a id="addButton" href="{% url 'addthread' %}">Add Post</a> -->
     <a class="btn" id="addButton" href="{% url 'addthread' %}">Add Post</a>
 
     {% else %}
