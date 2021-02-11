@@ -106,6 +106,6 @@ def deletethread(request, thread_id):
 def showgame(request, game_id):
     game = Game.objects.get(id=game_id)
     related_threads = Game.objects.filter(id=game_id)
-    threads = Thread.objects.filter(game__in=related_threads)
+    threads = Thread.objects.filter(game__in=related_threads) 
     context ={'game': game, 'threads': threads}
     return render(request, 'showgame.html', context)
