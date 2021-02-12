@@ -43,12 +43,13 @@ nav {
     padding: 10px;
 }
 
-/* Buttons */
-
-#addButton {
-    float: right;
-    margin-right: 5px;
+footer {
+    background-color: #6441A4;
+    color: white;
+    margin-top: 10px;
 }
+
+/* Buttons */
 
 .btn {
     background-color: #D79DFB;
@@ -107,6 +108,9 @@ p {
     margin-bottom: 0px;
 }
 
+#comment-card {
+    margin-left: 20px;
+}
 
 /* Games on games index and show page */
 
@@ -136,6 +140,7 @@ img {
 
 #game-links {
     line-height: 0px;
+    text-decoration: none;
 }
 
 #game-content {

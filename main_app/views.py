@@ -90,14 +90,15 @@ def editthread(request, thread_id):
             new_thread = thread_form.save(commit=False)
             new_thread.user = request.user
             new_thread.save()
+            context= {'thread': thread}
             return redirect('/', thread)
 
     thread_form = ThreadForm(instance=thread)
-    return render(request, 'editthread.html', context = {'thread_form': thread_form})
+    return render(request, 'editthread.html', context = {'thread_form': thread_form, 'thread': thread})
 
 def deletethread(request, thread_id):
     thread = Thread.objects.get(id=thread_id)
-    context = {}
+    context = {'thread': thread}
     if request.method == 'POST':
         thread.delete()
         return HttpResponseRedirect("/")

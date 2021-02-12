@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+{% if user == thread.user %}
 <div class="container">
 <h2 class="page-content-header">Delete Thread</h2>
 <!-- Add a Thread FORM -->
@@ -12,5 +13,9 @@
     <a href="/">Cancel</a>
     </form>
 </div>
+
+{% else %}
+<span>You must be logged in as the thread creator to delete this.</span>
+{% endif %}
 
 {% endblock %}

@@ -25,6 +25,7 @@ class ThreadForm(forms.ModelForm):
 
 # Create Comment Model
 class CommentForm(forms.ModelForm):
+    body = forms.CharField(label='Leave a comment', max_length = 1000, widget=forms.TextInput(attrs={'autocomplete':'off'}))
     class Meta:
         model = Comment
         fields = ['body']
