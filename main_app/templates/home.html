@@ -20,12 +20,19 @@
 {% for thread in threads %}
   <div class="card">
     <div class="card-content">
-      <p>Created by: {{thread.user}}</p>
-      <span class="card-title">{{ thread.title }}</span>
-      <p>{{ thread.description }}</p>
-      <p>{{ thread.created_at }} PST</p>
-      <a href="{% url 'thread' thread.id %}" class="btn btn-primary">See Post</a>
-      <a class="game-category" href="{% url 'showgame' thread.game.id %}">{{ thread.game }}</a>
+      <span class="thread-user">{{thread.user}} posted:</span>
+      <h1><a class="post-title" href="{% url 'thread' thread.id %}"class="card-title">{{ thread.title }}</a></h1>
+      {% if thread.description > thread.description|slice:":255" %}
+        <span class="post-description">{{ thread.description|slice:":255"}}</span>
+        <a class="post-title" href="{% url 'thread' thread.id %}">See more...</a>
+      {% else %}
+        <p class="post-description">{{ thread.description }}</p>
+      {% endif %}
+     
+      <p>
+        <a class="game-category" href="{% url 'showgame' thread.game.id %}">{{ thread.game }}</a>
+        <span class="created-at">{{ thread.created_at }} PST</span>
+      </p>
     </div>
   </div>
   {% endfor %}

@@ -16,8 +16,17 @@ nav {
     font-size: 18px;
 }
 
+.nav-link:hover {
+    color: rgb(214, 214, 214);
+}
+
+#inactive-navlink:hover {
+    color: white;
+}
+
 .title-logo {
-    padding-top: 10px;
+    padding: 5px;
+    font-size: 60px;
 }
 
 .page-content-header {
@@ -38,6 +47,7 @@ nav {
 
 #addButton {
     float: right;
+    margin-right: 5px;
 }
 
 .btn {
@@ -45,18 +55,83 @@ nav {
     color: black;
 }
 
-/* Post Customization */
+/* Content Customization */
+.thread-user {
+    text-decoration: none;
+    font-style: italic;
+    font-weight: normal !important;
+}
+
 .game-category {
     text-decoration: none;
+    font-style: italic;
+    font-weight: normal !important;
 }
+
+.game-category:hover {
+    text-decoration: underline;
+}
+
+.card {
+    border: 2px solid #6441A4;
+    border-radius: 0px;
+    margin-top: 3px;
+}
+
+.post-title {
+    text-decoration: none;
+    color: black;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    color: rgb(54, 54, 54);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.created-at{
+    font-weight: normal !important;
+    font-size: 10px;
+}
+
+.post-description {
+    font-weight: normal !important;
+    font-size: 14px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
 
 /* Games on games index and show page */
 
 img {
     width: 144px;
     height: 192px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+}
+
+.img-hover { 
+
+/* @CREDITS: Grow on hover animation by Ian Lunn - https://ianlunn.github.io/Hover/ */
+    display: inline-block;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.img-hover:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 #game-links {
@@ -70,6 +145,14 @@ img {
 #game-logo-layout{
     text-align: center;
 } 
+
+.game-description {
+    font-weight: 400 !important;
+    text-align:justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+}
 
 /*
 a {
