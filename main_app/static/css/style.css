@@ -22,16 +22,32 @@ nav {
 
 .page-content-header {
     margin-top: 10px;
+    margin-bottom: 0px;
     padding: 5px 5px 5px 10px;
     background-color: #6441A4;
     border-radius: 10px 10px 0px 0px;
     color: white;
 }
 
-/* Homepage */
+.card-content {
+    background: rgb(228, 228, 228);
+    padding: 10px;
+}
+
+/* Buttons */
 
 #addButton {
     float: right;
+}
+
+.btn {
+    background-color: #D79DFB;
+    color: black;
+}
+
+/* Post Customization */
+.game-category {
+    text-decoration: none;
 }
 
 /* Games on games index and show page */

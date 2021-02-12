@@ -24,8 +24,8 @@
       <span class="card-title">{{ thread.title }}</span>
       <p>{{ thread.description }}</p>
       <p>{{ thread.created_at }} PST</p>
-      <p>{{ thread.game }}</p>
       <a href="{% url 'thread' thread.id %}" class="btn btn-primary">See Post</a>
+      <a class="game-category" href="{% url 'showgame' thread.game.id %}">{{ thread.game }}</a>
     </div>
   </div>
   {% endfor %}
