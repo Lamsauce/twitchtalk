@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+{% if user == thread.user %}
+<div class="container">
+<h2 class="page-content-header">Edit Thread</h2>
+
+<!-- Add a Thread FORM -->
+    <form method="POST">
+        {% csrf_token %}
+        {{thread_form|crispy}}
+    <input type="submit" class="btn" value="Confirm">
+    </form>
+</div>
+{% else %}
+<span>You must be logged in as the thread creator to edit this.</span>
+{% endif %}
+
+{% endblock %}

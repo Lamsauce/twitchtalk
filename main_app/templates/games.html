@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2 class="page-content-header">Games</h2>
+
+    <div class="card">
+        <div class="card-content" id="game-logo-layout">
+    
+    {% for game in games|dictsort:"title.lower" %}
+            <a id="game-links" href="{% url 'showgame' game.id %}">
+                <img class="img-hover" id="game-logo" src="{{ game.image.url }}" alt="Logo">
+            </a>
+            
+    {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

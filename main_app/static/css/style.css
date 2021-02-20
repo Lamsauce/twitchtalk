@@ -1,0 +1,202 @@
+/* Universal */
+
+* {
+    font-family: "Helvetica";
+    font-weight: 600 !important;
+}
+
+nav {
+    background-color: #6441A4;
+    border-radius: 5px 5px 5px 5px;
+    height: 50px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: rgb(214, 214, 214);
+}
+
+#inactive-navlink:hover {
+    color: white;
+}
+
+.title-logo {
+    padding: 5px;
+    font-size: 60px;
+}
+
+.page-content-header {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 5px 5px 5px 10px;
+    background-color: #6441A4;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+}
+
+.card-content {
+    background: rgb(228, 228, 228);
+    padding: 10px;
+}
+
+footer {
+    background-color: #6441A4;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Buttons */
+
+.btn {
+    background-color: #D79DFB;
+    color: black;
+}
+
+/* Content Customization */
+.thread-user {
+    text-decoration: none;
+    font-style: italic;
+    font-weight: normal !important;
+}
+
+.game-category {
+    text-decoration: none;
+    font-style: italic;
+    font-weight: normal !important;
+}
+
+.game-category:hover {
+    text-decoration: underline;
+}
+
+.card {
+    border: 2px solid #6441A4;
+    border-radius: 0px;
+    margin-top: 3px;
+}
+
+.post-title {
+    text-decoration: none;
+    color: black;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+    color: rgb(54, 54, 54);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.created-at{
+    font-weight: normal !important;
+    font-size: 10px;
+}
+
+.post-description {
+    font-weight: normal !important;
+    font-size: 14px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+#comment-card {
+    margin-left: 20px;
+}
+
+/* Games on games index and show page */
+
+img {
+    width: 144px;
+    height: 192px;
+    margin: 5px;
+}
+
+.img-hover { 
+
+/* @CREDITS: Grow on hover animation by Ian Lunn - https://ianlunn.github.io/Hover/ */
+    display: inline-block;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.img-hover:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#game-links {
+    line-height: 0px;
+    text-decoration: none;
+}
+
+#game-content {
+    text-align: center;
+}
+
+#game-logo-layout{
+    text-align: center;
+} 
+
+.game-description {
+    font-weight: 400 !important;
+    text-align:justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+/*
+a {
+    
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav-area {
+    padding: 0px 10px 10px 10px;
+}
+
+#li-login {
+    padding-right: 5px;
+}
+
+h2 {
+    font-size: 25px !important;
+    margin: 0px;
+    background: #322D3D;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+}
+
+#addButton {
+    float: right;
+    text-transform: none !important;
+}
+
+#addButtonBlock {
+    float: right;
+    text-transform: none !important;
+}
+
+#addButtonBlock:hover:after {
+    content: "(Must be logged in)";
+    font-style: italic;
+    font-size: 10px;
+}
+
+*/

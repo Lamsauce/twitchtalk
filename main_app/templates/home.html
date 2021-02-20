@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Thread HEADER -->
+<div class="container">
+  <h2 class="page-content-header">Threads
+
+    <!-- Add Post AUTH Filter -->
+    {% if user.is_authenticated %}
+    <a class="btn" id="addButton" href="{% url 'addthread' %}">Add Post</a>
+
+    {% else %}
+    <a class="btn" id="addButtonBlock">Add Post</a>
+
+    {% endif %}
+  </h2>
+
+
+<!-- THREADS LIST -->
+{% for thread in threads %}
+  <div class="card">
+    <div class="card-content">
+      <span class="thread-user">{{thread.user}} posted:</span>
+      <h1><a class="post-title" href="{% url 'thread' thread.id %}"class="card-title">{{ thread.title }}</a></h1>
+      {% if thread.description > thread.description|slice:":255" %}
+        <span class="post-description">{{ thread.description|slice:":255"}}</span>
+        <a class="post-title" href="{% url 'thread' thread.id %}">See more...</a>
+      {% else %}
+        <p class="post-description">{{ thread.description }}</p>
+      {% endif %}
+     
+      <p>
+        <a class="game-category" href="{% url 'showgame' thread.game.id %}">{{ thread.game }}</a>
+        <span class="created-at">{{ thread.created_at }} PST</span>
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}

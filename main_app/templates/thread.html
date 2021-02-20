@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+<h2 class="page-content-header">Thread</h2>
+
+<div class="card">
+  <div class="card-content">
+    <span class="thread-user">{{thread.user}} posted:</span>
+    <h1><a class="post-title" href="{% url 'thread' thread.id %}"class="card-title">{{ thread.title }}</a></h1>
+    <p class="post-description">{{ thread.description }}</p>
+    <a class="game-category" href="{% url 'showgame' thread.game.id %}">{{ thread.game }}</a>
+    <span class="created-at">{{ thread.created_at }} PST</span>
+
+    {% if user == thread.user %}
+    <a href="{% url 'editthread' thread.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'deletethread' thread.id %}" class="btn btn-primary">Delete</a>
+    {% endif %}
+  </div>
+</div>
+
+
+<!-- ADD COMMENT -->
+
+{% if user.is_authenticated %}
+<div class="card">
+  <div class="card-body">
+    <h3>Leave a comment</h3>
+    <form method="POST"> 
+      {% csrf_token %}
+      {{ comment_form|crispy }}
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+<!-- COMMENTS -->
+
+{% for comment in comments %}
+  <div class="card" id="comment-card">
+      <div class="card-content">
+      <span class="thread-user">{{ comment.user }} replied:</span>
+       <p class="post-description">{{ comment.body }}</p>
+      <span class="created-at">{{ thread.created_at }} PST</span>
+      </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
